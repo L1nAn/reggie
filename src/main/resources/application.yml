@@ -1,0 +1,30 @@
+server:
+  port: 8080
+spring:
+  application:
+#    应用名称，可选，不配置的话就是本身的工程名
+    name: reggie_take_out
+  datasource:
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql:///reggie?serverTimezone=UTC
+#      url: jdbc:mysql://localhost:3306/reggie?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true
+      username: root
+      password: mzw
+  web:
+    resources:
+      static-locations:
+        [classpath:/front/]
+
+mybatis-plus:
+  configuration:
+    #在映射实体或者属性时，将数据库中表名和字段名中的下划线去掉，按照驼峰命名法映射
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      id-type: ASSIGN_ID
+      # 主键的自增长生成策略
+
+reggie:
+  path: D:\Java\资料\项目\瑞吉外卖\1 瑞吉外卖项目\资料\图片资源\
