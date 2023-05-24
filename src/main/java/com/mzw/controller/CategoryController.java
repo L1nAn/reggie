@@ -60,16 +60,16 @@ public class CategoryController {
 
     /**
      * 根据id删除信息
-     * @param ids
+     * @param id
      * @return
      */
     @DeleteMapping
     //删除返回一个泛型为String就可以了，因为R对象本身里面就有code，所以只需返回一个字符串即可
-    public R<String> delete(Long ids) {
-        log.info("删除分类，id为：{}", ids);
+    public R<String> delete(Long id) {
+        log.info("删除分类，id为：{}", id);
 
 //        categoryService.removeById(ids);这是mybatis-plus默认的方法，我们需要对他进行改造
-        categoryService.remove(ids);
+        categoryService.remove(id);
 
         return R.success("分类信息删除成功");
     }

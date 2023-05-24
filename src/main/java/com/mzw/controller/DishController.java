@@ -97,7 +97,7 @@ public class DishController {
                 dishDto.setCategoryName(category.getName());
             }
             return dishDto;
-        }).collect(Collectors.toList());//奖处理的数据转为list集合
+        }).collect(Collectors.toList());//将处理的数据转为list集合
 //        List<DishDto> list = null;
         dishDtoPage.setRecords(list);
 //        return R.success(pageInfo);
